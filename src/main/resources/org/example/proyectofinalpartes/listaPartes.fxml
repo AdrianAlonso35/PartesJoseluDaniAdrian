@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyectofinalpartes.Controller.ListaPartesController">
+    <children>
+        <ImageView fitHeight="659.0" fitWidth="1200.0" layoutX="1.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="22.0">
+            <image>
+                <Image url="@../../../images/logobuenoproyecto1.png" />
+            </image>
+        </ImageView>
+      <Pane layoutX="295.0" layoutY="47.0" prefHeight="174.0" prefWidth="613.0" style="-fx-background-color: #00cdff; -fx-background-radius: 10;">
+         <children>
+            <Text layoutX="203.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTA DE PARTES">
+               <font>
+                  <Font name="Candara Bold" size="28.0" />
+               </font>
+            </Text>
+            <Line endX="301.0" layoutX="292.0" layoutY="49.0" startX="-270.0" stroke="GREY" />
+            <TextField fx:id="numeroExpedienteBuscar" layoutX="22.0" layoutY="59.0" prefHeight="35.0" prefWidth="503.0" promptText="Buscar por Número de Expediente" />
+            <Button fx:id="buscarButton" layoutX="525.0" layoutY="59.0" mnemonicParsing="false" onAction="#onbuscarButtonClick" style="-fx-background-radius: 5; -fx-background-color: green;" text="Buscar" textFill="WHITE" />
+            <DatePicker fx:id="fecha1Buscar" layoutX="21.0" layoutY="103.0" prefHeight="35.0" prefWidth="217.0" promptText="dd/mm/aaaa" />
+            <DatePicker fx:id="fecha2Buscar" layoutX="237.0" layoutY="103.0" prefHeight="35.0" prefWidth="217.0" promptText="dd/mm/aaaa" />
+            <Button fx:id="buscarFechaButton" layoutX="454.0" layoutY="103.0" mnemonicParsing="false" onAction="#onbuscarFechaButtonClick" style="-fx-background-color: green; -fx-background-radius: 5;" text="Buscar por Fecha" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="191.0" layoutY="251.0" prefHeight="427.0" prefWidth="835.0" style="-fx-background-color: #00cdff; -fx-background-radius: 10;">
+         <children>
+            <TableView fx:id="tablaId" layoutX="15.0" layoutY="14.0" prefHeight="326.0" prefWidth="807.0">
+              <columns>
+                <TableColumn fx:id="expedienteTablaId" prefWidth="98.0" text="Expediente" />
+                <TableColumn fx:id="nombreTablaId" prefWidth="112.0" text="Nombre del alumno" />
+                  <TableColumn fx:id="grupoTablaId" prefWidth="87.0" text="Grupo" />
+                  <TableColumn fx:id="profesorTablaId" prefWidth="100.0" text="Profesor" />
+                  <TableColumn fx:id="fechaTablaId" prefWidth="98.0" text="Fecha" />
+                  <TableColumn fx:id="descripcionTablaId" prefWidth="163.0" text="Descripcion" />
+                  <TableColumn fx:id="sancionTablaId" prefWidth="148.0" text="Sancion" />
+              </columns>
+            </TableView>
+            <Pagination layoutX="318.0" layoutY="316.0" prefHeight="97.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+    </children>
+
+</AnchorPane>

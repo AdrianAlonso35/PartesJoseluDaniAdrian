@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #BEFC77;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyectofinalpartes.Controller.crearPartes.CrearParteVerdeController">
+   <children>
+      <Button fx:id="ParteVerdeButton" layoutX="421.0" layoutY="96.0" mnemonicParsing="false" onAction="#onParteVerdeButtonClick" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #198754;" text="Parte Verde" textFill="WHITE" />
+      <Button fx:id="ParteRojoButton" layoutX="672.0" layoutY="96.0" mnemonicParsing="false" onAction="#onParteRojoButtonClick" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #DC3545;" text="Parte Rojo" textFill="WHITE" />
+      <Button fx:id="ParteNaranjaButton" layoutX="546.0" layoutY="96.0" mnemonicParsing="false" onAction="#onParteNaranjaButtonClick" style="-fx-background-color: #FFC107;" text="Parte Naranja" />
+      <Line endX="1085.0" layoutX="115.0" layoutY="231.0" startX="-100.0" />
+      <Label layoutX="54.0" layoutY="152.0" prefHeight="41.0" prefWidth="160.0" text="Número de Expediente " />
+      <Label layoutX="54.0" layoutY="186.0" text="del Alumno:" />
+      <TextField fx:id="NumeroExpedienteID" layoutX="279.0" layoutY="157.0" prefHeight="31.0" prefWidth="324.0" promptText="Escribe el número de expediente" />
+      <Label layoutX="672.0" layoutY="162.0" text="Nombre del Grupo:" />
+      <ChoiceBox fx:id="NombreGrupoID" layoutX="856.0" layoutY="157.0" prefHeight="31.0" prefWidth="306.0" />
+      <Line endX="1085.0" layoutX="115.0" layoutY="315.0" startX="-100.0" />
+      <Label layoutX="54.0" layoutY="261.0" text="Profesor:" />
+      <Line endX="1085.0" layoutX="115.0" layoutY="391.0" startX="-100.0" />
+      <Label layoutX="54.0" layoutY="340.0" text="Fecha:" />
+      <DatePicker fx:id="FechaID" layoutX="279.0" layoutY="335.0" prefHeight="31.0" prefWidth="324.0" />
+      <Label layoutX="672.0" layoutY="340.0" text="Hora:" />
+      <Label layoutX="52.0" layoutY="417.0" text="Descripcion de los hechos:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="DescripcionID" layoutX="54.0" layoutY="452.0" prefHeight="134.0" prefWidth="1128.0" />
+      <Line endX="1085.0" layoutX="115.0" layoutY="619.0" startX="-100.0" />
+      <Button fx:id="CrearButton" layoutX="572.0" layoutY="637.0" mnemonicParsing="false" onAction="#onCrearButtonClick" style="-fx-background-color: #4BA0CE;" text="Crear" textFill="WHITE" />
+      <Label fx:id="ProfesorID" layoutX="279.0" layoutY="261.0" prefHeight="21.0" prefWidth="324.0" />
+      <Label layoutX="319.0" layoutY="14.0" prefHeight="70.0" prefWidth="569.0" text="PARTE VERDE DE ADVERTENCIA" textAlignment="CENTER">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="HoraID" layoutX="856.0" layoutY="340.0" prefHeight="21.0" prefWidth="306.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proyectofinalpartes.Controller.MenuProfesoresController">
+   <children>
+      <!-- Incluir la barra superior (menuSuperior.fxml) -->
+      <fx:include source="menuSuperior.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+      <!-- Imagen ajustada debajo de la barra -->
+      <ImageView fitHeight="627.0" fitWidth="1160.0" layoutX="32.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logobuenoproyecto1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
