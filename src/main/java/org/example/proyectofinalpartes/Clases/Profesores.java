@@ -100,4 +100,10 @@ public class Profesores {
         this.numero_asignado = numero_asignado;
         this.tipo = tipo;
     }
+
+    public Profesores(String nombre, int numero_asignado, String tipo) {
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+    }
 }

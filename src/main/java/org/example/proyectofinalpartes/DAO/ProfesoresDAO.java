@@ -28,6 +28,19 @@ public class ProfesoresDAO {
         return listaProfesores;
     }
 
+    public boolean crearProfesor(Profesores profesores) {
+        Transaction transaction = null;
+       try (Session session = factory.openSession()) {
+           transaction = session.beginTransaction();
+           session.save(profesores);
+           transaction.commit();
+           return true;
+       }catch (Exception e){
+           Alertas.alertaError(e.getMessage());
+       }
+       return false;
+    }
+
     public boolean comprobarProfesor(int profesor) {
         ArrayList<Profesores> listaProfesores = obtenerProfesores();
         for (Profesores profesores : listaProfesores) {
@@ -48,6 +61,17 @@ public class ProfesoresDAO {
         }
         return false;
     }
+
+    public boolean comprobarProfesorContrasenaNull(int profesor) {
+        ArrayList<Profesores> listaProfesores = obtenerProfesores();
+        for (Profesores profesores : listaProfesores) {
+            if (profesores.getNumero_asignado() == profesor && Objects.equals(profesores.getContrasena(), null)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int comprobarProfesorJefeDeEstudios(int profesor) {
         ArrayList<Profesores> listaProfesores = obtenerProfesores();
         for (Profesores profesores :listaProfesores){
@@ -79,4 +103,5 @@ public class ProfesoresDAO {
         }
         return null;
     }
+
 }
