@@ -106,4 +106,64 @@ public class Profesores {
         this.numero_asignado = numero_asignado;
         this.tipo = tipo;
     }
+
+    public Profesores(int id_profesor, String contrasena, String nombre, int numero_asignado, String tipo) {
+        this.id_profesor = id_profesor;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+    }
+
+    public Profesores(int id_profesor,String nombre, int numero_asignado, String tipo ) {
+        this.id_profesor = id_profesor;
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+    }
+
+    public Profesores(int id_profesor, String nombre, String tipo) {
+        this.id_profesor = id_profesor;
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
+
+    public Profesores(int id_profesor) {
+        this.id_profesor = id_profesor;
+    }
+
+    /*public Profesores() {
+    }
+
+    public Profesores(int id_profesor, String contrasena, String nombre, int numero_asignado, String tipo, Set<Partes_incidencia> partes_incidencias) {
+        this.id_profesor = id_profesor;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+        this.partes_incidencias = partes_incidencias;
+    }
+
+    public Profesores(String contrasena, String nombre, int numero_asignado) {
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+    }
+
+    public Profesores(String contrasena, String nombre, int numero_asignado, String tipo) {
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+    }
+
+    public Profesores(String nombre, int numero_asignado, String tipo) {
+        this.nombre = nombre;
+        this.numero_asignado = numero_asignado;
+        this.tipo = tipo;
+    }
+
+    public Profesores(int id_profesor) {
+        this.id_profesor = id_profesor;
+    }*/
 }

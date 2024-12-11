@@ -8,20 +8,8 @@ import java.time.LocalDate;
 public class Partes_incidencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_alum")
-    private int id_alum;
-
-    @Column(name = "id_grupo")
-    private int id_grupo;
-
     @Column(name = "id_parte")
     private int id_parte;
-
-    @Column(name = "id_profesor")
-    private int id_profesor;
-
-    @Column(name = "id_punt_partes")
-    private int id_punt_partes;
 
     @Column(name = "descripcion")
     private String descripcion;
@@ -38,38 +26,36 @@ public class Partes_incidencia {
 
     //RELACION ENTRE PARTES_INCIDENCIA Y ALUMNOS || muchos partes de incidencia a un alumno
     @ManyToOne
-    @JoinColumn(name = "id_alum", insertable = false, updatable = false)
-    Alumnos alumno;
+    @JoinColumn(name = "id_alum",nullable = false)
+    private Alumnos alumno;
 
-    //RELACION ENTRE PARTES_INCIDENCIA Y PUNTACION_PARTES || muchos partes de incidencia a un puntacion_partes
-    @ManyToOne
-    @JoinColumn(name = "id_punt_partes", insertable = false, updatable = false)
-    Puntuacion_partes puntacion_partes;
+    //RELACION ENTRE PARTES_INCIDENCIA A GRUPOS || muchos partes de incidencia a un grupo
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_grupo", nullable = false)
+    private Grupos grupo;
 
     //RELACION ENTRE PARTES_INCIDENCIA A PROFESOR || muchos partes de incidencia a un profesor
     @ManyToOne
-    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
+    @JoinColumn(name = "id_profesor", nullable = false)
     private Profesores profesor;
 
-    //RELACION ENTRE PARTES_INCIDENCIA A GRUPOS || muchos partes de incidencia a un grupo
+    //RELACION ENTRE PARTES_INCIDENCIA Y PUNTACION_PARTES || muchos partes de incidencia a un puntacion_partes
     @ManyToOne
-    @JoinColumn(name = "id_grupo", insertable = false, updatable = false)
-    private Grupos grupo;
+    @JoinColumn(name = "id_punt_partes", nullable = true)
+    private Puntuacion_partes puntacion_partes;
 
-    public int getId_alum() {
-        return id_alum;
+    public Partes_incidencia() {
     }
 
-    public void setId_alum(int id_alum) {
-        this.id_alum = id_alum;
-    }
-
-    public int getId_grupo() {
-        return id_grupo;
-    }
-
-    public void setId_grupo(int id_grupo) {
-        this.id_grupo = id_grupo;
+    public Partes_incidencia(String descripcion, LocalDate fecha, String hora, String sancion, Alumnos alumno, Grupos grupo, Profesores profesor, Puntuacion_partes puntacion_partes) {
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.sancion = sancion;
+        this.alumno = alumno;
+        this.grupo = grupo;
+        this.profesor = profesor;
+        this.puntacion_partes = puntacion_partes;
     }
 
     public int getId_parte() {
@@ -78,22 +64,6 @@ public class Partes_incidencia {
 
     public void setId_parte(int id_parte) {
         this.id_parte = id_parte;
-    }
-
-    public int getId_profesor() {
-        return id_profesor;
-    }
-
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
-    }
-
-    public int getId_punt_partes() {
-        return id_punt_partes;
-    }
-
-    public void setId_punt_partes(int id_punt_partes) {
-        this.id_punt_partes = id_punt_partes;
     }
 
     public String getDescripcion() {
@@ -136,12 +106,12 @@ public class Partes_incidencia {
         this.alumno = alumno;
     }
 
-    public Puntuacion_partes getPuntacion_partes() {
-        return puntacion_partes;
+    public Grupos getGrupo() {
+        return grupo;
     }
 
-    public void setPuntacion_partes(Puntuacion_partes puntacion_partes) {
-        this.puntacion_partes = puntacion_partes;
+    public void setGrupo(Grupos grupo) {
+        this.grupo = grupo;
     }
 
     public Profesores getProfesor() {
@@ -152,30 +122,11 @@ public class Partes_incidencia {
         this.profesor = profesor;
     }
 
-    public Grupos getGrupo() {
-        return grupo;
+    public Puntuacion_partes getPuntacion_partes() {
+        return puntacion_partes;
     }
 
-    public void setGrupo(Grupos grupo) {
-        this.grupo = grupo;
-    }
-
-    public Partes_incidencia() {
-    }
-
-    public Partes_incidencia(int id_alum, int id_grupo, int id_parte, int id_profesor, int id_punt_partes, String descripcion, LocalDate fecha, String hora, String sancion, Alumnos alumno, Puntuacion_partes puntacion_partes, Profesores profesor, Grupos grupo) {
-        this.id_alum = id_alum;
-        this.id_grupo = id_grupo;
-        this.id_parte = id_parte;
-        this.id_profesor = id_profesor;
-        this.id_punt_partes = id_punt_partes;
-        this.descripcion = descripcion;
-        this.fecha = fecha;
-        this.hora = hora;
-        this.sancion = sancion;
-        this.alumno = alumno;
+    public void setPuntacion_partes(Puntuacion_partes puntacion_partes) {
         this.puntacion_partes = puntacion_partes;
-        this.profesor = profesor;
-        this.grupo = grupo;
     }
 }

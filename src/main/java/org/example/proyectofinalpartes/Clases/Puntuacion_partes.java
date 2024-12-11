@@ -38,6 +38,10 @@ public class Puntuacion_partes {
         this.partes_incidencia = partes_incidencia;
     }
 
+    public Puntuacion_partes(int id_punt_partes) {
+        this.id_punt_partes = id_punt_partes;
+    }
+
     public Puntuacion_partes() {
     }
 
